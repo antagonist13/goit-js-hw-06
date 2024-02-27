@@ -12,22 +12,16 @@ class Storage {
     constructor(items) {
         this.#items = items
     }
-    get items() {
+    getItems() {
         return this.#items
     }
-    set items(newItem) {
-        this.#items = newItem
-    }
-    getItems() {
-        return this.items
-    }
     addItem(item) {
-        this.items.push(item);
+        this.#items.push(item);
     }
     removeItem(itemToRemove) {
-        const deleteItem = this.items.indexOf(itemToRemove);
+        const deleteItem = this.#items.indexOf(itemToRemove);
         if (deleteItem !== -1) {
-            this.items.splice(deleteItem, 1);
+            this.#items.splice(deleteItem, 1);
         } else {
             console.log("Error. Перелік товарів не містить такої назви.");
         }
